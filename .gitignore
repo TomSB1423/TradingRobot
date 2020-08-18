@@ -1,7 +1,7 @@
 # Personal Rules
 Ai/editedData
 Ai/rawData
-
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

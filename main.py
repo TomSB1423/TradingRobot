@@ -5,8 +5,6 @@ import MetaTrader5 as mt5
 import json
 from pandas_datareader import data as web
 
-
-
 class Trading:
     def __init__(self, username, password, server):
         self.username = username
