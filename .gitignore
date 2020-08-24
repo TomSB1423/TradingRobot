@@ -1,6 +1,6 @@
 # Personal Rules
-Ai/editedData
-Ai/rawData
+src/editedData
+src/rawData
 .vscode
 
 # Byte-compiled / optimized / DLL files
