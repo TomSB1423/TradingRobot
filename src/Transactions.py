@@ -3,7 +3,12 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import MetaTrader5 as mt5
 import json
+import os
+from dotenv import load_dotenv
 from pandas_datareader import data as web
+
+# Load environment variables
+load_dotenv()
 
 class Trading:
     def __init__(self, username, password, server):
@@ -128,9 +133,15 @@ class Trading:
         return
 
 
-username = 635893
-password = "oktqwjc4"
-server = "FXChoice"
+# Load credentials from environment variables
+username = int(os.getenv('MT5_USERNAME', '0'))
+password = os.getenv('MT5_PASSWORD', '')
+server = os.getenv('MT5_SERVER', '')
+
+if username == 0 or not password or not server:
+    print("Error: MT5 credentials not found in .env file")
+    print("Please create a .env file with MT5_USERNAME, MT5_PASSWORD, and MT5_SERVER")
+    quit()
 
 try:
     with open('data/datadump.json') as json_file:
